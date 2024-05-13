@@ -1,0 +1,12 @@
+com/solvd/posteducation/cucumber/carina/demo/gui/pages/ModelInfoPage.class
+com/solvd/posteducation/cucumber/carina/demo/gui/components/FooterMenu.class
+com/solvd/posteducation/cucumber/carina/demo/gui/pages/CompareModelsPage.class
+com/solvd/posteducation/cucumber/carina/demo/gui/components/compare/CondidateBlock.class
+com/solvd/posteducation/cucumber/carina/demo/gui/pages/NewsPage.class
+com/solvd/posteducation/cucumber/carina/demo/gui/components/compare/ModelSpecs$SpecType.class
+com/solvd/posteducation/cucumber/carina/demo/gui/components/WeValuePrivacyAd.class
+com/solvd/posteducation/cucumber/carina/demo/gui/pages/HomePage.class
+com/solvd/posteducation/cucumber/carina/demo/gui/components/compare/ModelSpecs.class
+com/solvd/posteducation/cucumber/carina/demo/gui/pages/BrandModelsPage.class
+com/solvd/posteducation/cucumber/carina/demo/gui/components/ModelItem.class
+com/solvd/posteducation/cucumber/carina/demo/gui/components/NewsItem.class

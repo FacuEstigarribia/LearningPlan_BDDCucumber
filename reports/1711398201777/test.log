@@ -1,0 +1,23 @@
+[2024-03-25 08:23:21] [1] [INFO] 
+============= Test configuration =============
+url=https://www.gsmarena.com
+env=DEMO
+selenium_url=http://localhost:4444/wd/hub
+auto_screenshot=true
+retry_interval=5
+project_report_directory=./reports
+max_screen_history=10
+localization_encoding=UTF-8
+language=en_US
+selenium_url=http://localhost:4444/wd/hub
+
+------------- Driver capabilities -----------
+capabilities.browserName=chrome
+================================================
+
+[2024-03-25 08:23:21] [1] [WARN] Reporting disabled: using no op test run registrar
+[2024-03-25 08:23:22] [1] [INFO] Set thread-count=1
+[2024-03-25 08:23:22] [1] [INFO] Set data-provider-thread-count=1
+[2024-03-25 08:23:22] [1] [INFO] CARINA_CORE_VERSION: 1.0.0
+[2024-03-25 08:23:23] [1] [INFO] INFO: '**************** Test execution summary ****************'.
+[2024-03-25 08:23:23] [1] [INFO] RESULT #1: TEST [Hello World test - helloWorld] PASS [log=file:///Users/solvd/Desktop/Java/CucumberPostEducation/CucumberProject/./reports/1711398201777/dafaac48-eec6-42d4-8ee0-62454fcbab07/test.log]
