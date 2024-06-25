@@ -1,20 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.solvd.posteducation.cucumber.carina.demo.gui.database.mappers.UserMapper">
+<mapper namespace="com.solvd.posteducation.cucumber.carina.demo.gui.database.mappers.IUserMapper">
 
+    <insert id="create" useGeneratedKeys="true" keyProperty="id">
+        <![CDATA[
+            INSERT INTO User (username, password, name, last_name, zip_code)
+            VALUES (
+                #{username},
+                #{password},
+                #{name},
+                #{last_name},
+                #{zip_code}
+            )
+        ]]>
+    </insert>
+
+    <sql id="getUser">
+        <![CDATA[
+            SELECT
+                id AS USER_ID,
+                username AS USER_USERNAME,
+                password AS USER_PASSWORD,
+                name AS USER_NAME,
+                last_name AS USER_LAST_NAME,
+                zip_code AS USER_ZIP_CODE
+            FROM
+                User
+        ]]>
+    </sql>
+
+<!--    SQL Statements  -->
     <select id="findById" resultMap="UserResultMap">
-        SELECT * FROM users WHERE ID = #{id}
+        <include refid="getUser" />
+        <![CDATA[
+            WHERE id = #{id};
+        ]]>
     </select>
+
+    <select id="findByUserName" resultMap="UserResultMap">
+        <include refid="getUser" />
+        <![CDATA[
+            WHERE username = #{username};
+        ]]>
+    </select>
+
+    <update id="update">
+        <![CDATA[
+            UPDATE
+                User
+        ]]>
+        <set>
+            <if test="null != name">
+                <![CDATA[
+                       name = #{name},
+                    ]]>
+            </if>
+            <if test="null != lastName">
+                <![CDATA[
+                       last_name = #{lastName},
+                    ]]>
+            </if>
+            <if test="null != zipCode">
+                <![CDATA[
+                       zip_code = #{zip_code},
+                    ]]>
+            </if>
+            <if test="null != username">
+                <![CDATA[
+                       username = #{username},
+                    ]]>
+            </if>
+            <if test="null != password">
+                <![CDATA[
+                       password = #{password},
+                    ]]>
+            </if>
+        </set>
+        <![CDATA[
+            WHERE
+                id = #{id}
+        ]]>
+    </update>
+
+    <delete id="delete">
+        <![CDATA[
+            DELETE FROM User
+            WHERE id = #{id}
+        ]]>
+    </delete>
 
     <resultMap type="com.solvd.posteducation.cucumber.carina.demo.gui.database.models.User"
                id="UserResultMap" autoMapping="false">
-        <id column="id" property="id" />
-        <result column="username" property="username" />
-        <result column="password" property="password" />
-        <result column="name" property="name" />
-        <result column="last_name" property="lastName" />
-        <result column="zip_code" property="zipCode" />
+        <id column="USER_ID" property="id" />
+        <result column="USER_USERNAME" property="username" />
+        <result column="USER_PASSWORD" property="password" />
+        <result column="USER_NAME" property="name" />
+        <result column="USER_LAST_NAME" property="lastName" />
+        <result column="USER_ZIP_CODE" property="zipCode" />
     </resultMap>
 
 </mapper>

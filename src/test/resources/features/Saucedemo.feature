@@ -3,7 +3,7 @@ Feature: Saucedemo Tests with Cucumber
 
   @demo
   Scenario: Saucedemo open page - original
-    Given I am on LoginPage
-    When Type valid username and password
-    When Cick Login button
-    Then HomePage must be opened checked by Products title
+    Given I am login into application using "standard_user"
+    When I add orders from the database for the user
+    And I proceed to checkout
+    Then I verify the order was successful

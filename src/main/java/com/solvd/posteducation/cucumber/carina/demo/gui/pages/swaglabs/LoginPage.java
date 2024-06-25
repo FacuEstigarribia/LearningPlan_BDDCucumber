@@ -22,13 +22,13 @@ public class LoginPage extends AbstractPage {
     }
 
 
-    public void typeUsername(){
-        usernameField.type(R.TESTDATA.get("username"));
+    public void typeUsername(String username){
+        usernameField.type(username);
     }
 
 
-    public void typePassword() {
-        passwordField.type(R.TESTDATA.get("password"));
+    public void typePassword(String password) {
+        passwordField.type(password);
     }
 
 

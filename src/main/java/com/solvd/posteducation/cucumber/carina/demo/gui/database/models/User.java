@@ -7,10 +7,10 @@ public class User {
     private Long id;
     private String username;
     private String password;
-    private String firstName;
+    private String name;
     private String lastName;
     private Long zipCode;
-    private List<UserOrder> orders = new ArrayList<>();
+
 
     public User() {
     }
@@ -33,11 +33,11 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-    public String getFirstName() {
-        return firstName;
+    public String getName() {
+        return name;
     }
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setName(String firstName) {
+        this.name = firstName;
     }
     public String getLastName() {
         return lastName;
@@ -50,11 +50,5 @@ public class User {
     }
     public void setZipCode(Long zipCode) {
         this.zipCode = zipCode;
-    }
-    public List<UserOrder> getOrders() {
-        return orders;
-    }
-    public void setOrders(List<UserOrder> orders) {
-        this.orders = orders;
     }
 }

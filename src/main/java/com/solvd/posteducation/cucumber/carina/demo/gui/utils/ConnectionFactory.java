@@ -28,11 +28,11 @@ public class ConnectionFactory {
         return factory;
     }
 
-    public static IUserMapper getUserMapper() {
+    public static IUserMapper getIUserMapper() {
         return ConnectionFactory.getSqlSessionFactory().openSession(true).getMapper(IUserMapper.class);
     }
 
-    public static IUserOrdersMapper getUserPreferenceMapperMapper() {
+    public static IUserOrdersMapper getIUserOrdersMapper() {
         return ConnectionFactory.getSqlSessionFactory().openSession(true).getMapper(IUserOrdersMapper.class);
     }
 }
