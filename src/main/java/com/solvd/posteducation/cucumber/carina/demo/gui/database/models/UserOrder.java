@@ -2,6 +2,7 @@ package com.solvd.posteducation.cucumber.carina.demo.gui.database.models;
 
 public class UserOrder {
     private Long id;
+    private Long userId;
     private String productName;
     private Double productPrice;
 
@@ -13,6 +14,15 @@ public class UserOrder {
     public void setId(Long id) {
         this.id = id;
     }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
     public String getProductName() {
         return productName;
     }
