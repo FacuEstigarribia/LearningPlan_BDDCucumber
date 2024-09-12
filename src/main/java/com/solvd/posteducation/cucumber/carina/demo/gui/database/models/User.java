@@ -9,7 +9,7 @@ public class User {
     private String password;
     private String name;
     private String lastName;
-    private Long zipCode;
+    private String zipCode;
     //private List<UserOrder> orders = new ArrayList<>();
 
 
@@ -56,11 +56,11 @@ public class User {
         this.lastName = lastName;
     }
 
-    public Long getZipCode() {
+    public String getZipCode() {
         return zipCode;
     }
 
-    public void setZipCode(Long zipCode) {
+    public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
     }
 //    public List<UserOrder> getOrders() {

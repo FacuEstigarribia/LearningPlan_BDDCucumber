@@ -21,6 +21,9 @@ public class LoginPage extends AbstractPage {
         setPageOpeningStrategy(PageOpeningStrategy.BY_URL);
     }
 
+    public void open(){
+        getDriver().get("https://www.saucedemo.com/");
+    }
 
     public void typeUsername(String username){
         usernameField.type(username);

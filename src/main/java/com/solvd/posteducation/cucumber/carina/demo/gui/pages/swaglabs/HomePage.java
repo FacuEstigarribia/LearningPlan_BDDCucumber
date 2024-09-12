@@ -15,6 +15,9 @@ public class HomePage extends AbstractPage {
     @FindBy(xpath = "//span[@data-test='title']")
     private ExtendedWebElement productsTitle;
 
+    @FindBy(xpath = "//a[@data-test='shopping-cart-link']")
+    private ExtendedWebElement cartIcon;
+
     @FindBy(xpath = "(//div[@data-test='inventory-list'])//div[@class='inventory_item']")
     private List<ExtendedWebElement> products;
 
@@ -43,6 +46,12 @@ public class HomePage extends AbstractPage {
         // Find the 'Add to Cart' button within the product element and click it
         ExtendedWebElement addToCartButton = productElement.findExtendedWebElement(By.xpath(".//button[contains(@class, 'btn')]"));
         addToCartButton.click();
+    }
+
+    public CartPage clickCartIcon(){
+        cartIcon.click();
+        CartPage cartPage = new CartPage(getDriver());
+        return cartPage;
     }
 
 }

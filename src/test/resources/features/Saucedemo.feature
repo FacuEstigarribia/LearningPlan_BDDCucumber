@@ -1,9 +1,7 @@
-Feature: Saucedemo Tests with Cucumber
-  Check Saucedemo web suite login functionality demo
+Feature: Ordering products from SauceDemo
 
-  @demo
-  Scenario: Saucedemo open page - original
-    Given I am login into application using "standard_user"
-    When I add orders from the database for the user
-    And I proceed to checkout
-    Then I verify the order was successful
+  Scenario: Place an order successfully
+    Given the user is logged in with credentials from the database
+    When the user adds orders stored in the database for the mentioned user
+    And proceeds to checkout
+    Then the order should be successful

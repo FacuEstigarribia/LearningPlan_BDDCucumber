@@ -1,13 +1,15 @@
-Feature: Checkout process
+Feature: Checkout process on SauceDemo
 
-  Background:
-    Given I am on the Sauce Demo login page
-    And I log in with username "<username>" and password "<password>"
-
-    Scenario Outline: Add products to cart and complete checkout
-      When I add my product to the cart and proceed to checkout
-      Then I should see the checkout confirmation page
-
+  Scenario Outline: Successful checkout for a valid user
+    Given the user is logged in with valid "<username>" and "<password>"
+    When the user adds items to the cart
+    And the user click on cart button
+    And the user proceeds to checkout
+    And the user provides valid shipping information
+    And the user click on continue button
+    And the user confirms the order
+    Then the user should see the order confirmation page
+    And the order should be saved in the database
 
     Examples:
       | username                | password     |

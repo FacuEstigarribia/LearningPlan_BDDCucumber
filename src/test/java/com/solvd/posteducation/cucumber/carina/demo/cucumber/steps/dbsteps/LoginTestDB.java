@@ -46,6 +46,7 @@ public class LoginTestDB implements IDriverPool {
                     username = user.getUsername();
                     password = user.getPassword();
                 }
+
             }
         }
         loginPage.typeUsername(username);
