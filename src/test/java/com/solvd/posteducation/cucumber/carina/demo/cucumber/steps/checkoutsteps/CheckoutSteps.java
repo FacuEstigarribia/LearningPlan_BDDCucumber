@@ -21,15 +21,14 @@ public class CheckoutSteps implements IDriverPool {
 
 
     private static SqlSessionFactory sqlSessionFactory;
-    private IUserMapper userMapper = null;
-    private IUserOrderMapper userOrdersMapper = null;
-    private User user = null;
-    private LoginPage loginPage = null;
-    private HomePage homePage = null;
-    private CartPage cartPage = null;
-    private CheckoutPage checkoutPage = null;
-    private CheckoutOverviewPage checkoutOverviewPage = null;
-    private CheckoutCompletePage checkoutCompletePage = null;
+    private IUserMapper userMapper;
+    private IUserOrderMapper userOrdersMapper;
+    private LoginPage loginPage;
+    private HomePage homePage;
+    private CartPage cartPage;
+    private CheckoutPage checkoutPage;
+    private CheckoutOverviewPage checkoutOverviewPage;
+    private CheckoutCompletePage checkoutCompletePage;
 
 
     @Given("the user is logged in with valid {string} and {string}")
@@ -46,7 +45,6 @@ public class CheckoutSteps implements IDriverPool {
                     password = user.getPassword();
                 }
             }
-
         }
         loginPage.typeUsername(username);
         loginPage.typePassword(password);
