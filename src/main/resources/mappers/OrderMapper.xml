@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.solvd.posteducation.cucumber.carina.demo.gui.database.mappers.IOrderMapper">
+
+    <insert id="create" parameterType="com.solvd.posteducation.cucumber.carina.demo.gui.database.models.UserOrder">
+        INSERT INTO userorders (user_id, product_name) VALUES (#{userId}, #{productName})
+    </insert>
+
+    <select id="findById" parameterType="long" resultMap="orderGet">
+        SELECT id, user_id, product_name FROM userorders WHERE id = #{id}
+    </select>
+
+    <resultMap type="com.solvd.posteducation.cucumber.carina.demo.gui.database.models.UserOrder"
+               id="orderGet" autoMapping="false">
+        <id column="id" property="id" />
+        <result column="user_id" property="userId" />
+        <result column="product_name" property="productName" />
+    </resultMap>
+
+    <delete id="delete" parameterType="int">
+        DELETE FROM userorders WHERE id = #{id}
+    </delete>
+
+    <update id="update" parameterType="com.solvd.posteducation.cucumber.carina.demo.gui.database.models.UserOrder">
+        UPDATE userorders SET user_id = #{userId}, product_name = #{productName} WHERE id = #{id}
+    </update>
+</mapper>

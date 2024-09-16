@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
 <mapper namespace="com.solvd.posteducation.cucumber.carina.demo.gui.database.mappers.IUserMapper">
-
     <insert id="create" useGeneratedKeys="true" keyProperty="id">
         <![CDATA[
-            INSERT INTO User (username, password, name, last_name, zip_code)
+            INSERT INTO User (username, password, name, lastname, zipcode)
             VALUES (
                 #{username},
                 #{password},
                 #{name},
-                #{last_name},
-                #{zip_code}
+                #{lastname},
+                #{zipcode}
             )
         ]]>
     </insert>
-
     <sql id="getUser">
         <![CDATA[
             SELECT
@@ -23,13 +20,12 @@
                 username AS USER_USERNAME,
                 password AS USER_PASSWORD,
                 name AS USER_NAME,
-                last_name AS USER_LAST_NAME,
-                zip_code AS USER_ZIP_CODE
+                lastname AS USER_LAST_NAME,
+                zipcode AS USER_ZIP_CODE
             FROM
                 User
         ]]>
     </sql>
-
 <!--    SQL Statements  -->
     <select id="findById" resultMap="UserResultMap">
         <include refid="getUser" />
@@ -58,12 +54,12 @@
             </if>
             <if test="null != lastName">
                 <![CDATA[
-                       last_name = #{lastName},
+                       lastname = #{lastName},
                     ]]>
             </if>
             <if test="null != zipCode">
                 <![CDATA[
-                       zip_code = #{zip_code},
+                       zipcode = #{zip_code},
                     ]]>
             </if>
             <if test="null != username">

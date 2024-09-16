@@ -4,12 +4,13 @@ package com.solvd.posteducation.cucumber.carina.demo.gui.utils;
 import java.io.IOException;
 import java.io.Reader;
 
+import com.solvd.posteducation.cucumber.carina.demo.gui.database.mappers.IOrderMapper;
+import com.solvd.posteducation.cucumber.carina.demo.gui.database.mappers.IUserOrderMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import com.solvd.posteducation.cucumber.carina.demo.gui.database.mappers.IUserMapper;
-import com.solvd.posteducation.cucumber.carina.demo.gui.database.mappers.IUserOrdersMapper;
 
 public class ConnectionFactory {
     private static SqlSessionFactory factory;
@@ -32,7 +33,11 @@ public class ConnectionFactory {
         return ConnectionFactory.getSqlSessionFactory().openSession(true).getMapper(IUserMapper.class);
     }
 
-    public static IUserOrdersMapper getIUserOrdersMapper() {
-        return ConnectionFactory.getSqlSessionFactory().openSession(true).getMapper(IUserOrdersMapper.class);
+    public static IUserOrderMapper getIUserOrdersMapper() {
+        return ConnectionFactory.getSqlSessionFactory().openSession(true).getMapper(IUserOrderMapper.class);
+    }
+
+    public static IOrderMapper getIOrderMapper(){
+        return ConnectionFactory.getSqlSessionFactory().openSession(true).getMapper(IOrderMapper.class);
     }
 }
