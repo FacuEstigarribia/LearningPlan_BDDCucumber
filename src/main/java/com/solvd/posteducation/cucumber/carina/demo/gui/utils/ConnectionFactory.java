@@ -4,6 +4,7 @@ package com.solvd.posteducation.cucumber.carina.demo.gui.utils;
 import java.io.IOException;
 import java.io.Reader;
 
+import com.solvd.posteducation.cucumber.carina.demo.gui.database.mappers.IOrderMapper;
 import com.solvd.posteducation.cucumber.carina.demo.gui.database.mappers.IUserOrderMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -34,5 +35,9 @@ public class ConnectionFactory {
 
     public static IUserOrderMapper getIUserOrdersMapper() {
         return ConnectionFactory.getSqlSessionFactory().openSession(true).getMapper(IUserOrderMapper.class);
+    }
+
+    public static IOrderMapper getIOrderMapper(){
+        return ConnectionFactory.getSqlSessionFactory().openSession(true).getMapper(IOrderMapper.class);
     }
 }

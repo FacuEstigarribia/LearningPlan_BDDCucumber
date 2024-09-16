@@ -23,6 +23,7 @@ public class CheckoutSteps implements IDriverPool {
     private static SqlSessionFactory sqlSessionFactory;
     private IUserMapper userMapper;
     private IUserOrderMapper userOrdersMapper;
+    private User user;
     private LoginPage loginPage;
     private HomePage homePage;
     private CartPage cartPage;
@@ -39,7 +40,7 @@ public class CheckoutSteps implements IDriverPool {
             sqlSessionFactory = ConnectionFactory.getSqlSessionFactory();
             try (SqlSession session = sqlSessionFactory.openSession()){
                 userMapper = session.getMapper(IUserMapper.class);
-                User user = userMapper.findByUsername(username);
+                user = userMapper.findByUsername(username);
                 if (user != null) {
                     username = user.getUsername();
                     password = user.getPassword();

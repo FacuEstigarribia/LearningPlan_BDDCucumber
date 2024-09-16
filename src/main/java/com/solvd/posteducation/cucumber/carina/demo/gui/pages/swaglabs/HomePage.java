@@ -1,5 +1,7 @@
 package com.solvd.posteducation.cucumber.carina.demo.gui.pages.swaglabs;
 
+import com.solvd.posteducation.cucumber.carina.demo.gui.pages.swaglabs.components.PrimaryHeaderComponent;
+import com.solvd.posteducation.cucumber.carina.demo.gui.pages.swaglabs.components.ProductItemComponent;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.decorator.PageOpeningStrategy;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
@@ -11,6 +13,12 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 public class HomePage extends AbstractPage {
+
+    @FindBy(xpath = "(//div[@data-test='primary-header'])")
+    private PrimaryHeaderComponent primaryHeaderComponent;
+
+    @FindBy(xpath = "(//div[@data-test='inventory-list'])")
+    private ProductItemComponent productItemComponent;
 
     @FindBy(xpath = "//span[@data-test='title']")
     private ExtendedWebElement productsTitle;
@@ -54,4 +62,11 @@ public class HomePage extends AbstractPage {
         return cartPage;
     }
 
+    public ProductItemComponent getProductItemComponent(){
+        return productItemComponent;
+    }
+
+    public PrimaryHeaderComponent getPrimaryHeaderComponent(){
+        return primaryHeaderComponent;
+    }
 }
